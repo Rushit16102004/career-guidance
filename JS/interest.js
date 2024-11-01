@@ -123,3 +123,11 @@ function calculate_9_avg() {
 function calculate_10_avg() {
     calculateAvg(['haskellSkill', 'swiftSkill', 'phpSkill'], 'Skillofsoftware5');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const expandableSection = document.getElementById("expandableSection");
+    
+    expandableSection.addEventListener("click", function() {
+        this.classList.toggle("active");
+    });
+ });

@@ -3,9 +3,8 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 }
-.container{
-  padding-top:4.2rem;
-  padding-bottom:4.2rem;
+.container {
+  padding: 4.2rem 0; /* Combined padding-top and padding-bottom */
 }
 a{
   text-decoration:none !important;
@@ -32,8 +31,14 @@ h1,h2,h3{
 .tx-tfm{
   text-transform:uppercase;
 }
-.mybtn{
-  border-radius:50px;
+.mybtn {
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effect */
+}
+
+.mybtn:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 .login-or {
   position: relative;
@@ -59,13 +64,18 @@ h1,h2,h3{
   margin-bottom: 0px !important;
 }
 .google {
-  color:#666;
-  width:100%;
-  height:40px;
-  text-align:center;
-  outline:none;
+  color: #666;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  outline: none;
   border: 1px solid lightgrey;
+  transition: background-color 0.3s ease; /* Added transition for background color */
 }
+.google:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
 form .error {
   color: #ff0000;
 }
@@ -75,12 +85,8 @@ h1 {
   font-weight: 600;
 }
 .nav-item {
-  font-size: 15px;
-  color: black;
-  font-weight: 400;
-  margin-left: 25px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Combined font properties */
 }
 #navi {
   background-color: #223141;
@@ -127,6 +133,11 @@ hr {
   text-align: center;
   margin-bottom: 30px;
   font-weight: 800;
+  transition: color 0.3s ease; /* Added transition for color change */
+}
+
+.header h2:hover {
+  color: #d35400; /* Change color on hover */
 }
 .h {
   color: #d35400;
@@ -135,10 +146,7 @@ hr {
 }
 .mycourse {
   background-color: #112d42;
-  margin-left: 40px;
-  margin-right: 40px;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  margin: 20px 40px; /* Combined margin properties */
 }
 #text,
 #links {
@@ -168,4 +176,20 @@ hr {
 }
 #links:hover {
   background-color: #d35400;
+}
+
+.expandable {
+  cursor: pointer;
+  transition: max-height 0.3s ease; /* Smooth transition for height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.expandable-content {
+  max-height: 0; /* Initially hidden */
+  transition: max-height 0.3s ease; /* Smooth transition for height */
+}
+
+/* Expanded state */
+.expandable.active .expandable-content {
+  max-height: 200px; /* Adjust based on content size */
 }

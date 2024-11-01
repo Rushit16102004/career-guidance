@@ -98,3 +98,11 @@ $(document).ready(function(){
     $("#sasasa").append(Fname1);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const expandableSection = document.getElementById("expandableSection");
+  
+  expandableSection.addEventListener("click", function() {
+    this.classList.toggle("active");
+  });
+});

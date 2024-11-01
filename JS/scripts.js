@@ -1,7 +1,14 @@
 $(document).ready(function(x) {
   x.preventDefault();
 })
-
+  function toggleContent(postId) {
+    const content = document.getElementById(postId);
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  }
 
 
 

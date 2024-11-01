@@ -470,3 +470,39 @@ body {
     transform: scale(1); /* Scale to normal size */
   }
 }
+/* New keyframes for 3D zoom effect */
+@keyframes zoom3D {
+  0% {
+    transform: perspective(600px) scale(0.5) rotateY(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: perspective(600px) scale(1.1) rotateY(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(600px) scale(1) rotateY(0deg);
+  }
+}
+
+/* Update the .slide class to include the new 3D zoom animation */
+.slide {
+  animation: zoom3D 0.5s ease-out;
+}
+
+.expandable {
+  cursor: pointer;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+}
+
+.expandable-content {
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+/* Expanded state */
+.expandable.active .expandable-content {
+  max-height: 200px;
+}
